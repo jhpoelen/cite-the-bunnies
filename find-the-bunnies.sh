@@ -27,4 +27,4 @@ preston cat ${PRESTON_OPTS} ${VERSION_ANCHOR}\
  | grep -E "(application/dwca|hasVersion)"\
  | grep --after 1 "application/dwca"\
  | preston dwc-stream ${PRESTON_OPTS}\
- | jq -c --arg scientificName "${SCIENTIFIC_NAME}" 'select(.["http://rs.tdwg.org/dwc/terms/scientificName"] == $scientificName)'
+ | jq --raw-output -c --arg versionAnchor "${VERSION_ANCHOR}" --arg scientificName "${SCIENTIFIC_NAME}" 'select(.["http://rs.tdwg.org/dwc/terms/scientificName"] == $scientificName) | { "scientificName": .["http://rs.tdwg.org/dwc/terms/scientificName"], "eventDate": .["http://rs.tdwg.org/dwc/terms/eventDate"], "wasDerivedFrom": .["http://www.w3.org/ns/prov#wasDerivedFrom"], "relation": "partOf", "versionAnchor": $versionAnchor }'
