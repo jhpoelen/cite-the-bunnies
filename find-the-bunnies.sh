@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# selects records that mention Sylvilagus floridanus (Eastern cottontail) as found in a specific version of the GBIF, iDigBio, BioCASe corpus. 
+# Selects records that mention Sylvilagus floridanus (Eastern cottontail) as found in a specific version of the GBIF, iDigBio, BioCASe corpus. For context, see https://discourse.gbif.org/t/when-does-evidence-of-impact-become-too-onerous-to-track/4639/11 as accessed on 2024-10-10.  
 #
 # usage:
 #
